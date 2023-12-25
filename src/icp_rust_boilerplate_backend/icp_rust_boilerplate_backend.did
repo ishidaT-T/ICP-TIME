@@ -1,0 +1,29 @@
+type Error = variant {
+  NotFound : record { msg : text };
+  NotAuthorized : record { msg : text; caller : principal };
+};
+type Event = record {
+  id : nat64;
+  updated_at : opt nat64;
+  event_title : text;
+  owner : text;
+  event_description : text;
+  event_card_imgurl : text;
+  created_at : nat64;
+  event_location : text;
+  attendees : vec text;
+};
+type EventPayload = record {
+  event_title : text;
+  event_description : text;
+  event_card_imgurl : text;
+  event_location : text;
+};
+type Result = variant { Ok : Event; Err : Error };
+service : {
+  attend_event : (nat64) -> (Result);
+  create_event : (EventPayload) -> (opt Event);
+  delete_event : (nat64) -> (Result);
+  get_event : (nat64) -> (Result) query;
+  update_event : (nat64, EventPayload) -> (Result);
+}
