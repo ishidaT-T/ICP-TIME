@@ -1,4 +1,4 @@
-# icp_rust_event
+# icp_event
 
 This a canister that allows users to:
 
