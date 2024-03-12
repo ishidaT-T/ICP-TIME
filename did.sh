@@ -14,7 +14,7 @@ function generate_did() {
 
 CANISTERS=icp_rust_boilerplate_backend
 
-for canister in $(echo $CANISTERS | sed "/ /")
+for canister in $(echo $CANISTERS | sed "//")
 do
     generate_did "$canister"
 done
