@@ -1,4 +1,4 @@
-# icp_event
+# I C P
 
 This a canister that allows users to:
 
