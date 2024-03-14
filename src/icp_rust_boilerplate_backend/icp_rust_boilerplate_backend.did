@@ -22,7 +22,7 @@ type EventPayload = record {
 type Result = variant { Ok : Event; Err : Error };
 service : {
   attend_event : (nat64) -> (Result);
-  create_event : (EventPayload) -> (opt Event);
+  create_event : (EventPayload) -> (op Event);
   delete_event : (nat64) -> (Result);
   get_event : (nat64) -> (Result) query;
   update_event : (nat64, EventPayload) -> (Result);
